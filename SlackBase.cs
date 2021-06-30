@@ -158,21 +158,6 @@ namespace Nysgjerrig
                 async () => new Chat{ Question = $"Hallo {members.First().Id.ToSlackMention()}! Hva skjer? :what: :up:"},
                 async () =>
                 {
-                    var leastMentionedUserId = members.First().Id;
-
-                    var question = $"Hva driver du med {leastMentionedUserId.ToSlackMention()}? ☺";
-
-                    var mostMentionedUser = await GetSlackUserInfo(members.Last().Id);
-                    if (mostMentionedUser?.Name != null)
-                    {
-                        var mostMentionedUserName = mostMentionedUser.Name.Split(".")[0].Capitalize();
-                        question = $"Nå har jeg plaga {mostMentionedUserName} nok! " + question;
-                    }
-
-                    return new Chat { Question = question};
-                },
-                async () =>
-                {
                     var question = $"Fortell oss hva du jobber med {members.First().Id.ToSlackMention()}!";
                     var feed = await HttpClient.GetStringAsync("https://www.kode24.no/?lab_viewport=rss");
                     if (feed != null)
