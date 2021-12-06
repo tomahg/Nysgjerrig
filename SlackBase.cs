@@ -159,7 +159,7 @@ namespace Nysgjerrig
                 async () =>
                 {
                     var question = $"Fortell oss hva du jobber med {members.First().Id.ToSlackMention()}!";
-                    var feed = await HttpClient.GetStringAsync("https://www.kode24.no/?lab_viewport=rss");
+                    var feed = await HttpClient.GetStringAsync("https://rss.kode24.no/");
                     if (feed != null)
                     {
                         var parser = new RssParser();
