@@ -191,6 +191,7 @@ namespace Nysgjerrig
                             {"Trysil", "lat=61.31485&lon=12.2637" },
                             {"Fredrikstad", "lat=59.2263353&lon=10.8800742" },
                             {"Gjøvik", "lat=60.829237&lon=10.518006" },
+                            {"Tønsberg", "lat=59.2763941&lon=10.3778411" },
                         };
 
                         var randomOffice = officeLocations.ElementAt(new Random().Next(0, officeLocations.Count));
